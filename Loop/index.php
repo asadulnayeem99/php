@@ -157,14 +157,20 @@
 
                             <?php
                             if (isset($_POST['sub'])) {
+                                // $checkdata = $_REQUEST['check'];
+                                // $marked = implode(",", $checkdata);
                                 $tom = $_POST["input"];
                                 $input1 = $_POST['input1'];
+
                                 for ($x = 1; $x <= $tom; $x++) {
-                                    $uu =  "<p style='color:green;' class='text-warning'> $input1  $x</p>" . "<br>";
+                                    if (isset($_POST['check'])) {
+                                        echo  "<p style='color:green;' class='text-warning'> $input1  $x</p>" . "<br>";
+                                    } else {
+                                        echo  "<p style='color:green;' class='text-warning'> $input1  </p>" . "<br>";
+                                    }
                                     // $uu =  " $input1  $x" . "<br>";
                                     // echo strip_tags($uu);
                                     // echo "<br>";
-                                    echo $uu;
                                 }
                             }
                             ?>
